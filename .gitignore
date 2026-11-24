@@ -1,0 +1,21 @@
+# Python environments and caches
+/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Manim build files and local previews
+/.build/
+/media/
+/Preview.mp4
+/VisualPreview.mp4
+
+# Local voice-over script
+narration.md
+naration.md
+
+# Local settings
+.DS_Store
+.env
+.env.*
+Video.mp4

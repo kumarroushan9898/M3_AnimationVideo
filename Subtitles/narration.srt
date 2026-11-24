@@ -1,0 +1,415 @@
+1
+00:00:00,150 --> 00:00:01,511
+Look at this coordinate grid.
+
+2
+00:00:02,150 --> 00:00:07,807
+Every point has a position. Every arrow has
+a direction. Everything seems perfectly
+ordinary.
+
+3
+00:00:08,150 --> 00:00:10,555
+But watch what happens when we apply a
+matrix.
+
+4
+00:00:10,675 --> 00:00:12,760
+The entire grid begins to stretch and tilt.
+
+5
+00:00:12,880 --> 00:00:17,169
+Vectors move, squares become
+parallelograms, and space itself appears to
+change.
+
+6
+00:00:17,650 --> 00:00:20,419
+What if matrices are not just collections
+of numbers?
+
+7
+00:00:20,539 --> 00:00:22,542
+What if they describe how space transforms?
+
+8
+00:00:22,662 --> 00:00:25,083
+Today, we are going to discover the
+geometric meaning
+
+9
+00:00:25,203 --> 00:00:29,580
+behind one of the most important ideas in
+linear algebra: linear transformations.
+
+10
+00:00:30,150 --> 00:00:31,481
+Let's begin with a vector.
+
+11
+00:00:31,601 --> 00:00:35,418
+A vector can be represented as an arrow
+with a magnitude and a direction.
+
+12
+00:00:36,150 --> 00:00:40,221
+When we add two vectors, we place the
+second arrow at the tip of the first.
+
+13
+00:00:40,650 --> 00:00:43,635
+When we multiply a vector by a number, we
+scale it.
+
+14
+00:00:44,150 --> 00:00:49,536
+Now imagine a machine that takes any vector
+as input and produces another vector as
+output.
+
+15
+00:00:49,656 --> 00:00:51,262
+We call this a transformation.
+
+16
+00:00:51,650 --> 00:00:54,427
+But a linear transformation follows two
+special rules.
+
+17
+00:00:54,547 --> 00:01:00,250
+Transforming the sum of two vectors gives
+the same result as transforming them
+separately and then adding them.
+
+18
+00:01:01,150 --> 00:01:06,276
+Similarly, scaling a vector before
+transforming it gives the same result as
+scaling it afterward.
+
+19
+00:01:07,150 --> 00:01:09,990
+These properties guarantee that the origin
+stays fixed.
+
+20
+00:01:10,110 --> 00:01:14,773
+They also explain why a linear
+transformation changes space in such a
+structured way.
+
+21
+00:01:15,150 --> 00:01:17,159
+Here is where things become interesting.
+
+22
+00:01:17,279 --> 00:01:21,596
+Every vector in two-dimensional space can
+be constructed using just two special
+vectors.
+
+23
+00:01:21,716 --> 00:01:24,028
+The green vector points one unit to the
+right.
+
+24
+00:01:24,148 --> 00:01:26,187
+The red vector points one unit upward.
+
+25
+00:01:26,307 --> 00:01:28,563
+These are called the standard basis
+vectors.
+
+26
+00:01:29,150 --> 00:01:30,578
+Now consider this matrix.
+
+27
+00:01:30,698 --> 00:01:32,614
+Its first row contains two and one.
+
+28
+00:01:32,734 --> 00:01:34,941
+Its second row contains zero and one.
+
+29
+00:01:35,650 --> 00:01:38,747
+The first column tells us where the green
+basis vector moves.
+
+30
+00:01:38,867 --> 00:01:40,988
+It lands at the coordinates two, zero.
+
+31
+00:01:41,650 --> 00:01:44,785
+The second column tells us where the red
+basis vector moves.
+
+32
+00:01:44,905 --> 00:01:46,436
+It lands at one, one.
+
+33
+00:01:47,150 --> 00:01:51,096
+Now watch the entire coordinate grid
+transform along with these vectors.
+
+34
+00:01:53,150 --> 00:01:55,051
+Because the transformation is linear,
+
+35
+00:01:55,171 --> 00:02:00,262
+knowing where these two basis vectors land
+is enough to determine where every other
+vector goes.
+
+36
+00:02:00,382 --> 00:02:04,608
+Four numbers can describe the
+transformation of an entire two-dimensional
+space.
+
+37
+00:02:05,150 --> 00:02:08,134
+Let's understand this using an actual
+example.
+
+38
+00:02:08,254 --> 00:02:11,066
+Consider the yellow vector with coordinates
+two, one.
+
+39
+00:02:12,150 --> 00:02:17,049
+Instead of immediately multiplying numbers,
+think about how this vector is constructed.
+
+40
+00:02:17,169 --> 00:02:22,905
+We move two units along the green basis
+vector, followed by one unit along the red
+basis vector.
+
+41
+00:02:24,150 --> 00:02:29,732
+In other words, our vector is two times the
+first basis vector, plus the second basis
+vector.
+
+42
+00:02:30,150 --> 00:02:32,418
+Now apply our linear transformation.
+
+43
+00:02:32,538 --> 00:02:35,008
+The green basis vector moves to two, zero.
+
+44
+00:02:35,128 --> 00:02:37,523
+The red basis vector moves to one, one.
+
+45
+00:02:38,150 --> 00:02:42,170
+But remember, linear transformations
+preserve linear combinations.
+
+46
+00:02:42,290 --> 00:02:46,694
+So our original vector must become two
+copies of the transformed green vector,
+
+47
+00:02:46,814 --> 00:02:49,506
+plus one copy of the transformed red
+vector.
+
+48
+00:02:50,150 --> 00:02:53,243
+Two times the vector two, zero gives us
+four, zero.
+
+49
+00:02:53,363 --> 00:02:56,342
+Adding the vector one, one gives us five,
+one.
+
+50
+00:02:56,462 --> 00:02:57,537
+And there it is.
+
+51
+00:02:57,657 --> 00:03:01,904
+Our original vector, two, one, has
+transformed into five, one.
+
+52
+00:03:03,150 --> 00:03:07,589
+Now let's compare this geometric approach
+with ordinary matrix multiplication.
+
+53
+00:03:08,150 --> 00:03:12,472
+For the first coordinate, multiply two by
+two, then add one times one.
+
+54
+00:03:12,592 --> 00:03:13,708
+The result is five.
+
+55
+00:03:14,150 --> 00:03:18,748
+For the second coordinate, multiply zero by
+two, then add one times one.
+
+56
+00:03:18,868 --> 00:03:19,927
+The result is one.
+
+57
+00:03:20,650 --> 00:03:23,349
+Both methods give exactly the same answer.
+
+58
+00:03:23,469 --> 00:03:24,964
+This is not a coincidence.
+
+59
+00:03:25,084 --> 00:03:30,645
+Matrix multiplication works because each
+matrix column represents a transformed
+basis vector.
+
+60
+00:03:30,765 --> 00:03:36,015
+The original vector's coordinates tell us
+how much of each transformed basis vector
+to use.
+
+61
+00:03:37,150 --> 00:03:43,103
+For any input coordinates x and y, this
+matrix produces two x plus y, and y.
+
+62
+00:03:43,223 --> 00:03:48,814
+What once looked like a mechanical
+calculation is actually a description of
+movement through space.
+
+63
+00:03:50,150 --> 00:03:52,074
+Let's return to our coordinate grid.
+
+64
+00:03:52,194 --> 00:03:54,615
+Consider this square with sides of length
+one.
+
+65
+00:03:55,150 --> 00:03:56,678
+Apply the same transformation.
+
+66
+00:03:56,798 --> 00:03:58,819
+The square stretches into a parallelogram.
+
+67
+00:04:00,150 --> 00:04:04,081
+Notice that the origin has not moved, and
+the grid lines remain straight.
+
+68
+00:04:04,650 --> 00:04:07,896
+In this example, parallel grid lines also
+remain parallel.
+
+69
+00:04:08,650 --> 00:04:11,434
+Different matrices produce different
+geometric effects.
+
+70
+00:04:11,554 --> 00:04:13,308
+One matrix can rotate space.
+
+71
+00:04:13,428 --> 00:04:14,521
+Another can reflect it.
+
+72
+00:04:15,150 --> 00:04:16,959
+Another can stretch or compress it.
+
+73
+00:04:17,079 --> 00:04:19,137
+And another can shear it sideways.
+
+74
+00:04:19,650 --> 00:04:21,833
+These transformations appear everywhere.
+
+75
+00:04:21,953 --> 00:04:24,505
+Computer graphics uses them to manipulate
+objects.
+
+76
+00:04:24,625 --> 00:04:26,681
+Robotics uses them to describe motion.
+
+77
+00:04:26,801 --> 00:04:29,483
+Engineering uses them to model changes in
+coordinates.
+
+78
+00:04:29,603 --> 00:04:34,605
+Behind each application is the same
+fundamental idea: representing how vectors
+transform.
+
+79
+00:04:35,150 --> 00:04:37,212
+Let's remember three important ideas.
+
+80
+00:04:37,332 --> 00:04:40,156
+First, matrices can represent linear
+transformations.
+
+81
+00:04:40,276 --> 00:04:43,098
+Second, their columns tell us where the
+basis vectors land.
+
+82
+00:04:43,218 --> 00:04:48,233
+Third, matrix multiplication combines those
+transformed basis vectors using the
+original coordinates.
+
+83
+00:04:48,650 --> 00:04:51,890
+The next time you see a matrix, don't just
+look at the numbers.
+
+84
+00:04:52,010 --> 00:04:53,086
+Imagine the grid moving.
+
+85
+00:04:53,206 --> 00:04:54,505
+Imagine the vectors changing.
+
+86
+00:04:55,150 --> 00:04:57,382
+A matrix is not just a table of numbers.
+
+87
+00:04:57,502 --> 00:04:59,515
+It is a description of how space changes.
